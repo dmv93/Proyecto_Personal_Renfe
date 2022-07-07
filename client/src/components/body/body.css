@@ -53,6 +53,9 @@ main{
 .card-title{
     font-weight: bolder;
 }
+p{
+    margin-left: 1em;
+}
 .btn{
     margin-top: 2em;
     margin-left: 35%;

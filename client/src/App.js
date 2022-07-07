@@ -1,21 +1,20 @@
-//import logo from './logo.svg';
-import './components/navbar/navbar.css';
-import './components/footer/footer.css';
-import './components/body/body.css'
+import React from 'react';
 
-import Navbar from "./components/navbar/Navbar";
-import Footer from './components/footer/Footer';
-import Body from './components/body/body';
+import Main from "./components/Main";
+//import { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import './components/navbar/navbar.css'
+import './components/body/body.css'
+import './components/footer/footer.css'
+import './components/logIn/login.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Navbar />
-        <Body />
-        <Footer />
-      </header>
+      <BrowserRouter>
+        <Main />
+      </BrowserRouter>
     </div>
   );
 }

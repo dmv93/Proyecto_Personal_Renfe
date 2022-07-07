@@ -1,19 +1,15 @@
-const express = require('express')
-const bodyParser = require('body-parser');
+const router = require("express").Router();
 
-const registros = require('../controllers/registro');
-const logs = require('../controllers/logs')
-const estacionComprobacion = require('../controllers/estacionComprobacion')
+const usuarios = require('../controllers/usuario');
+const loginuser = require('../controllers/logs')
 
-const router = express.Router();
+// const { usuario } = registroUsuario
+// const { logIn } = logs
+// const { buscar } = estacionComprobacion
 
-const { registroUsuario } = registros
-const { logIn } = logs
-const { buscar } = estacionComprobacion
-
-router.post('/registro', registroUsuario);
-router.post('/logs', logIn);
-router.get('/buscar', buscar);
+router.post('/usuario', usuarios.registroUsuario);
+router.post('/logs', loginuser.logIn);
+//router.get('/buscar', buscar);
 
 module.exports = router;
 

@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return(
         <div className='navbar'>
             <section display="flex" className='sectionNavbar'>
                 <div id='logoRenfe'>
-                    <a href='/' className='item'>
+                    <Link to={"/"} id='logoRenfe'>
                     <img src="/img/renfe-logo-blanco.png" className='logoRenfe' display="flex" alt="logo"></img>
-                    </a>
+                    </Link>
                 </div>
                 <div className='itemsNav'>
-                <a href='/' id='ini'>Iniciar sesión</a>
-                <a href='/' id='reg'>Registrarse</a>
-                <a href='/' id='com'>Comprar</a>
+                <Link to={"/login"} id='ini'>Iniciar sesión</Link>
+                <Link to={"/registro"} id='reg'>Registrarse</Link>
+                <Link to={"/compra"} id='com'>Compra</Link>
                 </div>
             </section>
         </div>

@@ -26,7 +26,7 @@ const Body = () => {
                         <img src="/img/0ren.jpg" alt="Compra de billete sencillo"></img>
                     </div>
                     <div className="card-content">
-                        <p className="card-title">Comprar tarjeta Renfe</p>
+                        <p className="card-title">COMPRAR TARJETA RENFE</p>
                         <div className="card-info">
                             <p className="info-title">Tarjeta Renfe de abono mensual/anual</p>
                             <p className="info-title">Con la tarjeta Renfe podrás viajar sin ningún tipo de restricción y aprovechandote de todos sus beneficios</p>
@@ -41,7 +41,7 @@ const Body = () => {
                         <img src="/img/pagar.jpg" alt="Compra de billete sencillo" id="tarj"></img>
                     </div>
                     <div className="card-content">
-                        <p className="card-title">Consultar Tarjeta</p>
+                        <p className="card-title">CONSULTAR TARJETA</p>
                         <div className="card-info">
                             <p className="info-title">Consulta el saldo de tu tarjeta Renfe</p>
                             <p className="info-title">Desde aquí puedes consultar la caducidad de tu tarjeta Renfe para no quedarte sin el placer de viajar</p>

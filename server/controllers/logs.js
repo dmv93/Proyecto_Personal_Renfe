@@ -15,16 +15,20 @@ const log = {
             if (usuario != null) {
                 const checkPassword = await compare(passwordLogin, usuario.pass);
                 if (checkPassword) {
-                    res.send("Usuario y contraseña correctos")
+                    //res.send("Usuario y contraseña correctos")
+                    console.log("USUARIO XAXI")
+                    
                 } else {
-                    res.send("La contraseña o el usuario no son correctos")
+                    //res.send("La contraseña o el usuario no son correctos")
+                    console.log("NOOOOO")
                 }
             } else {
-                res.send("Algo salio mal a la hora de introducir los datos")
+                //res.send("Algo salio mal a la hora de introducir los datos")
+                console.log("NO ME TROLEES")
             }
 
         } catch (error) {
-            res.send("errrror")
+            //res.send("errrror")
         }
 
 
