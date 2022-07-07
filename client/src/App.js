@@ -8,6 +8,7 @@ import './components/navbar/navbar.css'
 import './components/body/body.css'
 import './components/footer/footer.css'
 import './components/logIn/login.css'
+import './components/registro/registro.css'
 
 function App() {
   return (

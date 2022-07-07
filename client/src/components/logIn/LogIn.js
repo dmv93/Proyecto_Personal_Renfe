@@ -4,6 +4,7 @@ const Body = () => {
 
     const [mail, setMail] = useState("");
     const [pass, setPass] = useState("");
+    const [nombreUsuario, setNombreUsuario] = useState("")
 
 const sendData = () => {
 
@@ -22,10 +23,15 @@ const sendData = () => {
     .then((res) => res.json())
     .then((res) => console.log(res))
 }
+
+useEffect(() => {
+    setNombreUsuario(localStorage.getItem('nombre'))
+},[])
     return(
         <div className="body">
             <div className="cab">
-                <h2 className="cab">Iniciar sesión</h2>
+
+                {nombreUsuario ? <h2 className="cab">Bienvenido {nombreUsuario}</h2>: <h2 className="cab">Iniciar sesión</h2>}
             </div>
             <div className="formulario">
                 <form className="form">
