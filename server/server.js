@@ -1,19 +1,19 @@
 const express = require('express');
 
+require('./database/mongodb');
+require('./database/mysql');
+
 const app = express();
-const http = require('http');
 
 app.use(express.json());
 
 app.use(require('./routes/routes'));
-require('./database/mongodb');
-require('./database/mysql');
 
-const PORT = process.env.PORT || 3000;
 
-const server = http.createServer(app);
+const PORT = process.env.PORT || 5050;
 
-server.listen(PORT, () => {
+
+app.listen(PORT, () => {
     console.log(
       `Servidor corriendo en el puerto ${PORT}`
     );

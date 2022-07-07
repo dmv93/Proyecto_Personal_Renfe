@@ -12,7 +12,7 @@ const sequelize = new Sequelize('renfe', 'root', 'root', {
 
   sequelize.authenticate()
   .then(() => {
-    console.log('Conexión con MySQL establecida');
+    console.log('Conexión con la base de datos de MySQL establecida');
   })
   .catch((err) => {
     console.log('No conectado a MySQL: ' + err);
