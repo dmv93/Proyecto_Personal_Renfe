@@ -3,10 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import Login from "../components/logIn/LogIn";
 import Registro from "../components/registro/Registro";
 import Compra from "../components/compra/Compra";
-// import Consultar from "./Consultar";
+import Tarjeta from "../components/tarjeta/Tarjeta";
+import Consultar from "../components/consultar/Consultar"
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Body from "../components/body/Body";
+import RecuperarMail from "../components/recuperarMail/RecuperarMail";
+import RecuperarPass from "../components/recuperarPass/RecuperarPass";
 
 class Main extends Component {
     render() {
@@ -18,9 +21,10 @@ class Main extends Component {
                 <Route path="/login" element={<Login />}/>
                 <Route path="/registro" element={<Registro />} />
                 <Route path="/compra" element={<Compra />} />
-                {/* <Route path="/" element={<LandingPage />} /> */}
-                {/* <Route path="/login" element={<LogIn />} /> */}
-                {/* <Route path="/consultar" element={<Consultar />} /> */}
+                <Route path="/compraTarjeta" element={<Tarjeta />} />
+                <Route path="/consultar" element={<Consultar />} />
+                <Route path="/recuperarMail" element={<RecuperarMail />} />
+                <Route path="/recoveryPass/:email/:token" element={<RecuperarPass />} />
             </Routes>
             <Footer />
         </div>

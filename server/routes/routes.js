@@ -3,14 +3,15 @@ const router = require("express").Router();
 const usuarios = require('../controllers/usuario');
 const loginuser = require('../controllers/logs');
 const compra = require('../controllers/compraSinLogin');
+const recoveryMail = require('../controllers/recoveryMail')
 
-// const { usuario } = registroUsuario
-// const { logIn } = logs
-// const { buscar } = estacionComprobacion
 
 router.post('/usuario', usuarios.registroUsuario);
 router.post('/logs', loginuser.logIn);      //NO LLAMARLO ASI PORQUE ES PARA LOS AVISOS
 router.get('/compraSinLogin', compra.verInfoColeccionEstaciones);
+router.post('/recovery', recoveryMail.user);
+router.get("/recoveryPass/:email/:token", recoveryMail.confirmUser);
+router.post("/recoveryPass/:email/:token", recoveryMail.checkUserPost);
 //router.get('/buscar', buscar);
 
 module.exports = router;

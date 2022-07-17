@@ -8,6 +8,10 @@ import './components/footer/footer.css'
 import './components/logIn/login.css'
 import './components/registro/registro.css'
 import './components/compra/compra.css'
+import './components/tarjeta/tarjeta.css'
+import './components/consultar/consultar.css'
+import './components/recuperarMail/recuperar.css'
+import './components/recuperarPass/recuperarPass.css'
 
 function App() {
   return (

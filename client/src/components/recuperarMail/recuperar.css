@@ -1,0 +1,33 @@
+.cabMail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #610C63;
+    width: 50%;
+    margin-top: 15%;
+    margin-left: 25%;
+    color: aliceblue;
+}
+
+.alertMail {
+    display: flex;
+    justify-content: space-around;
+}
+
+.formuMail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+#email {
+    display: flex;
+    width: 60%;
+}
+
+.submitBtn {
+    width: 30%;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}

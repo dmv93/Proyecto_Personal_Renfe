@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
 
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
 
     const [mail, setMail] = useState("");
     const [pass, setPass] = useState("");
@@ -26,23 +26,34 @@ const sendData = () => {
 
     fetch("logs", info)
     .then((res) => res.json())
-    .then((res) => console.log(res))
+    .then((res) => {if (res) {
+        localStorage.setItem('user', mail);
+        console.log(res)   
+        if (nombreUsuario) {
+            // navigate('/')
+            window.location.assign("/")
+        }     
+    }})
 
-     if (nombreUsuario) {
-        navigate('/')
-    }
+     
 
 }
 
+// fetch("usuario", info)
+// .then((res) => res.json())
+// .then((res) => {if (res) {
+//     localStorage.setItem('nombre',name);
+//     navigate('/login')
+// }})
+
 useEffect(() => {
     if (nombreUsuario) {
-        navigate('/')
+        // navigate('/')
     }
 },[])
 
 useEffect(() => {
     setNombreUsuario(localStorage.getItem('nombre'))
-
 },[])
     return(
         <div className="body">
@@ -61,7 +72,9 @@ useEffect(() => {
                     <br/>
                         <input type="password" id="passUsuario" name="pass" placeholder="Introduce tu contraseña aquí" 
                         onChange={(e) => {setPass(e.target.value)}}/>
+                    <Link to={"/recuperarMail"} id="recuperarText">
                     <p id="olvidar">¿Has olvidado tu contraseña?</p>
+                    </Link>
                     <input type="button"  className="boton" onClick={() => sendData()} value="Iniciar"/>
                 </form>
             </div>
