@@ -9,7 +9,7 @@ const compra = require('../controllers/compraSinLogin');
 // const { buscar } = estacionComprobacion
 
 router.post('/usuario', usuarios.registroUsuario);
-router.post('/logs', loginuser.logIn);
+router.post('/logs', loginuser.logIn);      //NO LLAMARLO ASI PORQUE ES PARA LOS AVISOS
 router.get('/compraSinLogin', compra.verInfoColeccionEstaciones);
 //router.get('/buscar', buscar);
 

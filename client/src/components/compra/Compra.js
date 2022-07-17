@@ -8,51 +8,25 @@ const Compra = () => {
     const [datosEstaciones, setDatosEstaciones] = useState('');
 
     //  const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     const requestOptions = {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify(
-    //             { datosEstaciones: datosEstaciones })
-    //     };
-
-    //     fetch("compraSinLogin")
-    //     .then((response) => response.json())
-    //     .then((res) => {
-    //         setDatosEstaciones(res.message)
-    //     })
-    // },[])
-
-    useEffect (() => {
-        const requestOptions = {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify( {estaciones: datosEstaciones})
-        }
-
+    useEffect(() => {
         fetch("compraSinLogin")
             .then((response) => response.json())
-            .then((res) =>  setDatosEstaciones(res) )
+            .then((res) => {
+                setDatosEstaciones(res)
+                console.log(res.length)
+            })
+    }, []);
 
-            if(datosEstaciones){
-                console.log(datosEstaciones)
-            }
-    })
-
-
+// {datosEstaciones.length}
 
     return (
         <div className="body">
-            <h2 id="cab">Compra de billetes</h2>
+            <h2 id="cab">Compra de billetes  </h2>
             <div className="cart">
-                {datosEstaciones ? datosEstaciones.map((linea, index) => {
-                    return(
+                {datosEstaciones ? datosEstaciones.map((linea, index) =>   
                         <div key={index}>
-                            <p> name: {linea.zona}</p>
+                            <p> name: {linea.estacion}</p>
                         </div>
-                    )
-                }
                     // <div key={index} className="contenedor">
                     //     <div>
                     //         <p className="test">{linea.lineas}</p>
