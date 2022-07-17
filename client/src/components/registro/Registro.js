@@ -68,7 +68,7 @@ const sendData = () => {
                     <input type={"tel"} id="campoTelefono" name="telefono" placeholder="Introduce aquí tu número de teléfono"
                     onChange={(e) => {setPhone(e.target.value)}}/>
                     <label htmlFor="" id="">Contraseña</label>
-                    <input type={"text"} id="campoNombre" name="nombre" placeholder="Introduce aquí tu nombre"
+                    <input type={"password"} id="campoNombre" name="nombre" placeholder="Introduce aquí tu nombre"
                     onChange={(e) => {setPass(e.target.value)}}/>
                     <label htmlFor="" id="">Fecha de nacimiento</label>
                     <input type={"date"} id="campoFecha" name="fecha" placeholder="Introduce aquí tu fecha de nacimiento en formato 1993-08-03"

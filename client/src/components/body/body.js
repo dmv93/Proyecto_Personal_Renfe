@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     return (
@@ -8,7 +9,9 @@ const Body = () => {
             <section className="cards">
                 <div className="card">
                     <div className="card-image-container">
+                        <Link to={"/compra"} id="imagenCompra">
                         <img src="/img/compraSencillo.webp" alt="Compra de billete sencillo"></img>
+                        </Link>
                     </div>
                     <div className="card-content">
                         <p className="card-title">COMPRAR BILLETE</p>
@@ -16,7 +19,9 @@ const Body = () => {
                             <p className="info-title">Billete sencillo para tu viaje en Renfe</p>
                             <p className="info-title">Compra de billetes sin necesidad de registro, rápido y cómodo</p>
                         </div>
+                        <Link to={"/compra"} id="imagenCompra">
                         <button className="btn">Comprar</button>
+                        </Link>
                     </div>
                 </div>
             </section>

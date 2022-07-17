@@ -1,6 +1,11 @@
 import React, {useState, useEffect} from "react";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Body = () => {
+
+const Login = () => {
+
+    let navigate = useNavigate()
 
     const [mail, setMail] = useState("");
     const [pass, setPass] = useState("");
@@ -22,10 +27,22 @@ const sendData = () => {
     fetch("logs", info)
     .then((res) => res.json())
     .then((res) => console.log(res))
+
+     if (nombreUsuario) {
+        navigate('/')
+    }
+
 }
 
 useEffect(() => {
+    if (nombreUsuario) {
+        navigate('/')
+    }
+},[])
+
+useEffect(() => {
     setNombreUsuario(localStorage.getItem('nombre'))
+
 },[])
     return(
         <div className="body">
@@ -51,4 +68,4 @@ useEffect(() => {
         </div>
     )
 }
-export default Body;
+export default Login;
