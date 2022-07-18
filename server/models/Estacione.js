@@ -13,8 +13,7 @@ const estacionSchema = mongoose.Schema ({
     }]
 })
 
-const estacione = model('estacione', estacionSchema);
-//const Conductore = model('Conductore', conductoreSchema);
+const estacione = model('estaciones', estacionSchema);
 
 
 module.exports = estacione;

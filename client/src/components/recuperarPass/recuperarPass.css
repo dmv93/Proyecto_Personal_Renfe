@@ -1,0 +1,10 @@
+.cabPass{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #610C63;
+    width: 50%;
+    margin-top: 15%;
+    margin-left: 25%;
+    color: aliceblue;
+}

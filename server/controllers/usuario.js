@@ -28,17 +28,17 @@ const usuarios = {
                     fecha_nacimiento: fecha_nacimiento,
                 });
                 console.log(usuario.toJSON().id);
-                res.send("TODO SALIO BIEN")
+                console.log("Usuario registrado de manera correcta")
+                res.send(true)
             } else {
-                console.log('Datos invalidos');
-                res.status(500);
-                res.send("SE FUE A LA PUTA")
+                console.log('Datos invalidos a la hora de registrarse');
+                res.send(false)
             }
         } catch (error) {
             console.error(error);
             res.status(500);
         } 
-    }
+    },
 }
 
 module.exports = usuarios;
