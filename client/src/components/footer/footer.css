@@ -1,0 +1,40 @@
+.footer {
+    /* width: 100%;
+    display:block; 
+    position: absolute;
+    bottom: 0; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    background-color: #610C63;
+}
+ .sectionFooter {
+    height: 110px;
+    background-color: #610C63;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 33% 33% 33%;
+}
+.logoRenfe {
+    display: flex;
+    height: 55px;
+    margin-left: 2em;
+    /* justify-content: space-between; */
+    
+}
+.logoEUES {
+    display: flex;
+    height: 55px;
+    margin-left: 2em;
+    /* justify-content: space-between; */
+}
+
+#logoEUES {
+    size: 200px;
+}
+#logosGenereal {
+    display: flex;
+    flex-direction: row;
+}
+
