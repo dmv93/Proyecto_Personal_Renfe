@@ -39,15 +39,6 @@ const usuarios = {
             res.status(500);
         } 
     },
-
-    compraTarjeta: async (req,res) => {
-        try {
-            
-        } catch (error) {
-            console.error(error);
-            res.status(500);
-        }
-    }
 }
 
 module.exports = usuarios;
