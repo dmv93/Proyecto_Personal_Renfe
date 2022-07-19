@@ -1,3 +1,7 @@
+body{
+    background-color: #EDE6DB;
+}
+
 .cab{
     margin-top: 1em;
     display: flex;
@@ -11,11 +15,12 @@
     background-color: #610C63;
     width: 60%;
     margin-left: 20%;
+    border-radius: 1em;
 }
 #usuario{
     margin-top: 2em;
     font-size: xx-large;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
 }
@@ -31,7 +36,7 @@ width: auto;
 #pass{
     margin-top: 1em;
     font-size: xx-large;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
 }
@@ -52,9 +57,19 @@ width: auto;
 
 #olvidar{
     margin-top: 2em;
-    color: white;
+    color: black;
+    text-decoration:double;
 }
 .boton{
+    display: block;
     margin-top: 1em;
     margin-bottom: 3em;
+    display: inline-block;
+    padding: 1em 2em;
+    background: white;
+    color: black;
+    border-radius: 2em;
+    border:none;
+    outline: 2px solid black;
+    outline-offset: 3px;
 }

@@ -6,9 +6,75 @@
 
 .contTar {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     background-color: #610C63;
     width: 60%;
     margin-left: 20%;
+    border-radius: 1em;
 }
+
+.formTar {
+    margin-top: 1em;
+    font-size: x-large;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.correo {
+    margin-top: 1em;
+    font-size: x-large;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#labMail {
+    font-size: xx-large;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#campoMail {
+    margin-top: 1em;
+    margin-top: 1em;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.selectAbono{
+    display: flex;
+    flex-direction: column;
+}
+
+#labAbono{
+    font-size: xx-large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.selectZona {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+#labZona {
+    font-size: xx-large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem; 
+}
+

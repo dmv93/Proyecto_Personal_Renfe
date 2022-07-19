@@ -73,7 +73,7 @@ useEffect(() => {
                         <input type="password" id="passUsuario" name="pass" placeholder="Introduce tu contraseña aquí" 
                         onChange={(e) => {setPass(e.target.value)}}/>
                     <Link to={"/recuperarMail"} id="recuperarText">
-                    <p id="olvidar">¿Has olvidado tu contraseña?</p>
+                    <h2 id="olvidar">¿Has olvidado tu contraseña?</h2>
                     </Link>
                     <input type="button"  className="boton" onClick={() => sendData()} value="Iniciar"/>
                 </form>

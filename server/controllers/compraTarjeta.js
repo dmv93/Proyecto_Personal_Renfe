@@ -2,17 +2,31 @@ const Usuario = require("../models/Usuario");
 const Tarjeta = require("../models/Tarjeta");
 
 const compra = {
+
+
+  
   comprobarCorreo: async (req, res) => {
+    console.log(req.body)
     try {
-      const { usuarioMail } = req.body;
+      const usuarioMail = req.body.usarioMail;
+      console.log(usuarioMail);
 
       const usuario = await Usuario.findOne({
         where: { email: usuarioMail },
       });
+      
+      console.log(usuario.id)
+
+      const idfk = await Tarjeta.findOne({
+        where: { fk_id: usuario.id },
+      });
+      console.log(idfk.caducidad)
+
 
       if (usuario != null) {
         console.log("Usuario encontrado");
-        res.send(true);
+        // res.send(true);
+        res.json({ caducidad: idfk.caducidad, condicion: true})
       } else {
         console.log("Usuario desconocido");
         res.send(false);
@@ -35,21 +49,18 @@ const compra = {
           console.log(usuario.id);
           var fecha = new Date();
           console.log(fecha)
-          // fecha.setMonth(fecha.getMonth() + 1);
-          var test =  Date(fecha.setMonth(fecha.getMonth() + 1))
+          var test = Date(fecha.setMonth(fecha.getMonth() + 1))
           console.log(test)
-          // console.log(fecha);
-    
-             const tarjetaMes = await Tarjeta.create({
-              fk_id: usuario.id,
-              duracion,
-              zona,
-              precio,
-              alta: test,
-              caducidad: fecha,
-            });
-            // console.log(fecha)
-            // console.log(test)
+
+          const tarjetaMes = await Tarjeta.create({
+            fk_id: usuario.id,
+            duracion,
+            zona,
+            precio,
+            alta: test,
+            caducidad: fecha,
+          });
+
         } else {
 
           var fecha = new Date();
@@ -57,14 +68,14 @@ const compra = {
           var test = Date(fecha.setFullYear(fecha.getFullYear() + 1))
           console.log(test);
           // fecha.setFullYear(fecha.getFullYear() + 1);
-            const tarjetaYear = await Tarjeta.create({
-              fk_id: usuario.id,
-              duracion,
-              zona,
-              precio,
-              alta: test,
-              caducidad: fecha,
-            });
+          const tarjetaYear = await Tarjeta.create({
+            fk_id: usuario.id,
+            duracion,
+            zona,
+            precio,
+            alta: test,
+            caducidad: fecha,
+          });
         }
 
         res.send(true);
@@ -75,19 +86,15 @@ const compra = {
     } catch (error) {
       console.error("Ocurrio un error a la hora de intentar buscar el usuario");
     }
-
-    //   if (duracion != null && zona != null && precio != null) {
-    //     console.log("Tarjeta registrada");
-    //     console.log(tarjeta.toJSON());
-    //     res.send(true);
-    //   } else {
-    //     console.log("Error en los datos");
-    //     res.send(false);
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
   },
+
+  imprimirCaducidad: async (req,res) => {
+    try {
+      
+    } catch (error) {
+      console.error("Ocurrio un error al buscar")
+    }
+  }
 };
 
 module.exports = compra;

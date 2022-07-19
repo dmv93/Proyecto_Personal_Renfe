@@ -54,23 +54,23 @@ const sendData = () => {
             <h2 id="cab">Registrar usuario nuevo</h2>
             <div className="formulario">
                 <form className="form">
-                    <label htmlFor="" id="">Nombre</label>
+                    <label htmlFor="" id="labelNombre">Nombre</label>
                     <br/>
                     <input type={"text"} id="campoNombre" name="nombre" placeholder="Introduce aquí tu nombre"
                     onChange={(e) => {setName(e.target.value)}}/>
-                    <label htmlFor="" id="">Apellidos</label>
+                    <label htmlFor="" id="labelApe">Apellidos</label>
                     <input type={"text"} id="campoApellido" name="apellidos" placeholder="Introduce aquí tus apellidos"
                     onChange={(e) => {setLastame(e.target.value)}}/>
-                    <label htmlFor="" id="">Correo electrónico</label>
+                    <label htmlFor="" id="campoCorreo">Correo electrónico</label>
                     <input type={"email"} id="campoEmail" name="mail" placeholder="Introduce aquí tu correo electrónico"
                     onChange={(e) => {setMail(e.target.value)}}/>
-                    <label htmlFor="" id="">Teléfono</label>
+                    <label htmlFor="" id="campoTel">Teléfono</label>
                     <input type={"tel"} id="campoTelefono" name="telefono" placeholder="Introduce aquí tu número de teléfono"
                     onChange={(e) => {setPhone(e.target.value)}}/>
-                    <label htmlFor="" id="">Contraseña</label>
-                    <input type={"password"} id="campoNombre" name="nombre" placeholder="Introduce aquí tu nombre"
+                    <label htmlFor="" id="campoPass">Contraseña</label>
+                    <input type={"password"} id="campoNombre" name="nombre" placeholder="Introduce aquí tu contraseña"
                     onChange={(e) => {setPass(e.target.value)}}/>
-                    <label htmlFor="" id="">Fecha de nacimiento</label>
+                    <label htmlFor="" id="campoFech">Fecha de nacimiento</label>
                     <input type={"date"} id="campoFecha" name="fecha" placeholder="Introduce aquí tu fecha de nacimiento en formato 1993-08-03"
                     onChange={(e) => {setDate(e.target.value)}}/>
                     <input type="button" className="boton" onClick={() => sendData()} value="Registrar"/>
