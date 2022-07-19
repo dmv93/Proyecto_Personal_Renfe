@@ -13,10 +13,6 @@ const Compra = () => {
     const [aviso, setAviso] = useState("");
     const [zona, setZona] = useState("");
 
-    // let [selected, setSelected] = useState('Ida');
-
-
-
 
     const sendData = () => {
 
@@ -28,14 +24,14 @@ const Compra = () => {
             setAviso("")
         }
 
-        if(viaje === "1"){
+        if (viaje === "1") {
             console.log("vale ida")
 
         } else {
             console.log("vale vuelta")
         }
 
-
+        //pasamos los valores de origen-destino-viaje(precio) para tratarlos
         let enviarCompra = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -48,25 +44,21 @@ const Compra = () => {
         console.log(precio);
         console.log(enviarCompra);
 
-
-        
-
-
+        //si logra trabajar la promesa nos devuelve el objeto res con sus valores
         fetch("compraSinLogin", enviarCompra)
             .then((res) => res.json())
             .then((res) => (res))
     }
-    //  const navigate = useNavigate();
+
+    //utilizamos el hook para cuando renderize nos devuelva datos de las estaciones de mongo
     useEffect(() => {
         fetch("compraSinLogin")
             .then((response) => response.json())
             .then((res) => {
                 setDatosEstaciones(res)
-                // console.log(res.length)
             })
     }, []);
 
-    // {datosEstaciones.length}
 
     return (
         <div className="body">
@@ -102,8 +94,8 @@ const Compra = () => {
                     {/* {datosEstaciones ? datosEstaciones.map((linea, index) =>
                         <p key={{ index }}>{precio}</p>)
                         : ""} */}
-                                        <input type="button" className="boton" onClick={() => sendData()} value="Comprar" />
-                {aviso ? aviso : ""}
+                    <input type="button" className="boton" onClick={() => sendData()} value="Comprar" />
+                    {aviso ? aviso : ""}
                 </div>
             </div>
         </div>

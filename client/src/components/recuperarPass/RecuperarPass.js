@@ -10,6 +10,7 @@ function RecuperarPass() {
     const [message, setMessage] = useState("");
 
     const cambiarPass = () => {
+        //pasamos el mail y el token para poder trabajar en el back
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -18,6 +19,7 @@ function RecuperarPass() {
 
         console.log(requestOptions)
 
+        //si todo sale bien en el back nos cambia la contraseña cuando el user ponga la nueva
         fetch("recoveryPass", requestOptions)
             .then((res) => res.json())
             .then((res) => {
