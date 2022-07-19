@@ -24,7 +24,7 @@ const Tarjeta = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        usarioMail: mail,
+      usarioMail: mail,
       }),
     };
     console.log(comprobacion);
@@ -79,7 +79,7 @@ const Tarjeta = () => {
               type="mail"
               id="campoMail"
               name="campoMail"
-              placeholder="Introduce el correo con el que estás registrado"
+              placeholder="Introduce correo con el que te registraste"
               onChange={(e) => {
                 setMail(e.target.value);
               }}
@@ -107,7 +107,7 @@ const Tarjeta = () => {
             </select>
           </div>
 
-          <p>Precio:</p>
+          <p>Precio: {precio}</p>
           <input
             type={"button"}
             onClick={() => sendData()}

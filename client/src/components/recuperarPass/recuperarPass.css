@@ -7,4 +7,28 @@
     margin-top: 15%;
     margin-left: 25%;
     color: aliceblue;
+    border-radius: 1em;
+}
+
+.alertPass {
+    display: flex;
+    justify-content: space-around;
+}
+
+.formuPass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+#pass {
+    display: flex;
+    width: 60%;
+}
+
+.boton {
+    width: 30%;
+    margin-top: 3em;
+    margin-bottom: 3em;
 }

@@ -1,0 +1,113 @@
+body{
+    background-color: #EDE6DB;
+}
+
+.cab{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #610C63;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 1em;
+}
+
+#labelNombre{
+    margin-top: 1em;
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#campoNombre {
+    height: 30px;
+    display: flex;
+    margin: 0;
+    font-size: large;
+    width: 300px;
+}
+
+#labelApe{
+    margin-top: 0.5em;
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+
+#campoApellido{
+    height: 30px;
+    display: flex;
+    margin: 0;
+    font-size: large;
+    width: 300px;
+}
+
+#campoCorreo{
+    margin-top: 0.5em;
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+
+#campoEmail {
+    height: 30px;
+    display: flex;
+    margin: 0;
+    font-size: large;
+    width: 300px;
+}
+
+#campoTel {
+    margin-top: 0.5em;
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;   
+}
+
+#campoTelefono{
+    height: 30px;
+    display: flex;
+    margin: 0;
+    font-size: large;
+    width: 300px;
+}
+
+#campoPass {
+    margin-top: 0.5em;
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;  
+}
+
+#campoFech {
+    margin-top: 0.5em;
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;  
+}
+
+#campoFecha {
+    margin-top: 0.5em;
+    font-size: large;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;  
+}

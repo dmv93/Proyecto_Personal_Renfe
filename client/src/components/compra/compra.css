@@ -1,3 +1,67 @@
-h1{
+/* h1{
     margin-top: 100px;
+} */
+
+.estaciones {
+    display: flex;
+}
+
+.cab {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.estaciones{
+    display: grid;
+    justify-content: space-around;
+    background-color: #610C63;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 1em;
+}
+
+#origen{
+    margin-top: 1em;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#destino {
+    margin-top: 1em;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#viaje {
+    margin-top: 1em;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.radio {
+    font-size:x-large;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+#precio {
+    margin-top: 1em;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1rem;
 }
