@@ -13,9 +13,9 @@ router.get('/compraSinLogin', compra.verInfoColeccionEstaciones);
 router.post('/recovery', recoveryMail.user);
 router.get("/recoveryPass/:email/:token", recoveryMail.confirmUser);
 router.post("/recoveryPass/:email/:token", recoveryMail.checkUserPost);
-// router.post("/comprobarCorreo", compraTarjeta.comprobarCorreo)
-router.post("/guardarTarjeta", compraTarjeta.comprarTarjeta)
-
+router.post("/comprobarCorreo", compraTarjeta.comprobarCorreo)
+router.post("/guardarTarjeta", compraTarjeta.comprarTarjeta);
+router.post("/compraSinLogin", compra.guardarDatosCompra);
 
 module.exports = router;
 

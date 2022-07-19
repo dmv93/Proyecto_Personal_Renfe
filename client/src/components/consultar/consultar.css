@@ -1,0 +1,14 @@
+.carCon {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contCon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #610C63;
+    width: 60%;
+    margin-left: 20%;
+}
