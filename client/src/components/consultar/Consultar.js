@@ -9,23 +9,43 @@ const Consulta = () => {
     const [mail, setMail] = useState("");
     const [nombreUsuario, setNombreUsuario] = useState("");
     const [tarjeta, setTarjeta] = useState("");
+    const [duracion, setDuracion] = useState("")
 
     const comprobar = () => {
         let comprobacion = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                usarioMail: mail,
+            usarioMail: mail,
             }),
         };
 
-        console.log(comprobacion)
+        // console.log(comprobacion)
 
-        fetch("comprobarCorreo")
+        fetch("comprobarCorreo",comprobacion)
             .then((res) => res.json())
-            .then((res) => console.log(res))
+            .then((res) => {setDuracion(res.caducidad)})
             //meter aqui el res
     }
+
+
+    const senData = () => {
+        let caducidad = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              duracion,
+            }),
+          };
+
+        console.log(caducidad);
+
+          fetch("obtenerCaducidad",caducidad)
+          .then((res) => res.json())
+          .then((res) => {
+          console.log("Holaaaaa")})
+    }
+
 
     useEffect(() => {
         setNombreUsuario(localStorage.getItem("nombre"));
@@ -41,6 +61,7 @@ const Consulta = () => {
                 )}
             </div>
             <div className="contCon">
+                <div className="concon">
                 <label htmlFor="labMail" id="labMail" name="labMail">
                     Correo electrónico
                 </label>
@@ -53,6 +74,7 @@ const Consulta = () => {
                         setMail(e.target.value);
                     }}
                 />
+                </div>
                 <br />
                 <input
                     type={"button"}
@@ -62,7 +84,7 @@ const Consulta = () => {
                 />
 
                 <div className="resCon">
-                    <p>La caducidad de tu tarjeta vence el {tarjeta}</p>
+                    <p>La caducidad de tu tarjeta vence el {duracion ? duracion : ""}</p>
                 </div>
             </div>
         </div>

@@ -86,7 +86,7 @@ const Compra = () => {
                         ) : ""}
                     </select>
                     <label htmlFor="viaje" id="viaje">Viaje: </label>
-                    <form>
+                    <form className="form">
                         <div className="radio">
                             <label>
                                 <input name="1" type="radio" value="0" onClick={(e) => setViaje("1.00€")} />
@@ -98,14 +98,13 @@ const Compra = () => {
                             </label>
                         </div>
                     </form>
-                    <label htmlFor="precio" id="precio" onClick={(e) => setPrecio(e.target.value)}>Precio: </label>
-                    {viaje}
+                    <label htmlFor="precio" id="precio" onClick={(e) => setPrecio(e.target.value)}>Precio: {viaje}</label>
                     {/* {datosEstaciones ? datosEstaciones.map((linea, index) =>
                         <p key={{ index }}>{precio}</p>)
                         : ""} */}
-                </div>
-                <input type="button" className="boton" onClick={() => sendData()} value="Comprar" />
+                                        <input type="button" className="boton" onClick={() => sendData()} value="Comprar" />
                 {aviso ? aviso : ""}
+                </div>
             </div>
         </div>
     )

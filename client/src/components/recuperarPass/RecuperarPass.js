@@ -32,7 +32,7 @@ function RecuperarPass() {
                 <div className="req">
                     <div className="formuPass">
                             <input onChange={(e) => setPass(e.target.value)} className="imput" type="password" name="pass" id="pass" placeholder="contraseña" required></input>
-                            <button onClick={() => cambiarPass()} id="registrarUser" className="submitBtn">CAMBIAR CONTRASEÑA</button>
+                            <button onClick={() => cambiarPass()} id="registrarUser" className="boton">CAMBIAR CONTRASEÑA</button>
                     </div>
                 </div>  
             </div>

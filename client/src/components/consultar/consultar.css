@@ -6,9 +6,27 @@
 
 .contCon {
     display: flex;
-    flex-direction: column;
+}
+
+.contCon {
+    display: grid;
     justify-content: space-around;
     background-color: #610C63;
     width: 60%;
     margin-left: 20%;
+    border-radius: 1em;
+}
+.concon{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#campoMail {
+    margin-top: 1em;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-bottom: 1em;
 }

@@ -29,7 +29,7 @@ function RecuperarMail() {
                     <div className="formuMail">
                             <input onChange={(e) => setMail(e.target.value)} className="imput" type="email" name="email" id="email" placeholder="Email" required></input>
                             <br></br>
-                            <button onClick={() => sendMail()} id="registrarUser" className="submitBtn">Comprobar</button>
+                            <button onClick={() => sendMail()} id="registrarUser" className="boton">Comprobar</button>
                     </div>
                 </div>  
             </div>
