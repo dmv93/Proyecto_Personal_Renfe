@@ -16,7 +16,7 @@ router.post("/recoveryPass/:email/:token", recoveryMail.checkUserPost);
 router.post("/comprobarCorreo", compraTarjeta.comprobarCorreo)
 router.post("/guardarTarjeta", compraTarjeta.comprarTarjeta);
 router.post("/compraSinLogin", compra.guardarDatosCompra);
-router.post("/obtenerCaducidad", compraTarjeta.imprimirCaducidad);
+// router.post("/obtenerCaducidad", compraTarjeta.imprimirCaducidad);
 
 module.exports = router;
 

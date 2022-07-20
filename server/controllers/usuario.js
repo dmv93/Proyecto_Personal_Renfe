@@ -3,6 +3,7 @@ const { encrypt } = require('../helpers/handleByCript');
 
 const usuarios = {
     registroUsuario: async (req, res) => {
+        //registro de los usuarios
         console.log(req.body)
         try {
 
@@ -15,6 +16,7 @@ const usuarios = {
                 fecha_nacimiento
             } = req.body
 
+            //encriptamos pass
             const passwordHash = await encrypt(pass);
 
             if (nombre.match(/^[a-z ,.'-]+$/i) && apellido.match(/^[a-z ,.'-]+$/i) && email.match(/^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/)
@@ -27,6 +29,7 @@ const usuarios = {
                     pass: passwordHash,
                     fecha_nacimiento: fecha_nacimiento,
                 });
+                //si el usuario ha superado las validaciones se registra
                 console.log(usuario.toJSON().id);
                 console.log("Usuario registrado de manera correcta")
                 res.send(true)
@@ -37,7 +40,7 @@ const usuarios = {
         } catch (error) {
             console.error(error);
             res.status(500);
-        } 
+        }
     },
 }
 

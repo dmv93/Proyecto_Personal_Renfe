@@ -11,25 +11,31 @@ const SECRET = "palabraSecreta";
 
 const recovery = {
 
+    
     user: async (req, res, next) => {
         try {
             let emailUser = req.body.email;
-
+            //esperamos a que coincida los mail
             const user = await Usuario.findOne({
                 where: { email: emailUser }
             });
 
             if (user != null) {
+                //si hemos pasado la validacion del user introducimos en el payload el mail
                 const payload = {
                     email: emailUser,
                 };
 
-            const token = jwt.sign(payload, SECRET, { expiresIn: "30m" });
-            const link = `<a href="http://localhost:3000/recoveryPass/${emailUser}/${token}">Cambiar contraseña</a>`;
-            sendMail("davidthebridge93@gmail.com", `${emailUser}`, "Recuperación de contraseña", `${link}`)
-            res.json({message: "Te mandamos un mail con los siguientes pasos"})
+                //guardamos en el toke el mail y la palabra secreta y le damos un limte de tiempo
+                const token = jwt.sign(payload, SECRET, { expiresIn: "30m" });
+                //introducimos todo en el link que recibimos por mail
+                const link = `<a href="http://localhost:3000/recoveryPass/${emailUser}/${token}">Cambiar contraseña</a>`;
+                //enviamos con la formula de from-asunto....
+                sendMail("davidthebridge93@gmail.com", `${emailUser}`, "Recuperación de contraseña", `${link}`)
+                //notificamos al usuario que vaya al mail
+                res.json({ message: "Te mandamos un mail con los siguientes pasos" })
             } else {
-                res.json({message: "Usuario no encontrado"})
+                res.json({ message: "Usuario no encontrado" })
                 console.error("No hemos podido hacer nada")
             }
 
@@ -46,26 +52,29 @@ const recovery = {
 
         const { pass, email, token } = req.body;
 
+        //tenemos que encontrar un usuario que concuerde
         let usuario = await Usuario.findOne({
-            where: { email: email},
+            where: { email: email },
         })
-        
+
         const passHass = await encrypt(pass)
 
-        if(usuario.email == email){
+        if (usuario.email == email) {
             console.log("Mail bien")
 
             try {
                 const comprobar = jwt.verify(token, SECRET);
-
+                //con el token recibido esperamos a actualizar la contraseña
                 const cambiarPass = await Usuario.update({
                     pass: passHass
                 },
-                {
-                    where: { id: usuario.id},
-                });
+                //si la id del mail recibido coinicde con el id de ese correo se hace el cambio
+                    {
+                        where: { id: usuario.id },
+                    });
+                    //enviamos mail d eocnfi de cambio de pass
                 sendMail("davidthebridge93@gmail.com", `${email}`, "Cambio de la contraseña", "Contraseña cambiada")
-                res.json({ message: "Cambio realizado"})
+                res.json({ message: "Cambio realizado" })
 
 
             } catch (error) {
@@ -73,16 +82,17 @@ const recovery = {
             }
         } else {
             console.log("Mail no concluyente")
-            res.json({ message: "No podemos confirmar los datos proporcionados"})
+            res.json({ message: "No podemos confirmar los datos proporcionados" })
         }
     },
 
     confirmUser: async (req, res) => {
+        //obtenemos la info de los parametros que pasamos
         const { token, email } = req.params;
         console.log(req.params)
-
+        //comparamos el mail con el recibido
         let result = await Usuario.findOne({
-            where: { email: email},
+            where: { email: email },
         });
 
         if (result.email == email) {
@@ -91,9 +101,10 @@ const recovery = {
             console.error("Email incorrecto")
         }
         try {
+            //token que pasamos para poder trabajar la pass
             const comprobar = jwt.verify(token, SECRET);
             res.json(window.location.assign("/recoverPass"),
-            { email: email} )
+                { email: email })
         } catch (error) {
             console.log(error)
         }

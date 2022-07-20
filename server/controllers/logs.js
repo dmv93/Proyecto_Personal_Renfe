@@ -6,19 +6,19 @@ const log = {
         try {
             const { usuarioLogin, passwordLogin } = req.body;
 
+            //esperamos a encontrar un usuario que coincida
             const usuario = await Usuario.findOne({
                 where: { email: usuarioLogin }
             })
 
-            //console.log(usuario)
-
             if (usuario != null) {
+                //encriptamos la contraseña
                 const checkPassword = await compare(passwordLogin, usuario.pass);
                 if (checkPassword) {
                     //res.send("Usuario y contraseña correctos")
                     console.log("Usuario y contraseña correctas")
                     res.send(true)
-                    
+
                 } else {
                     //res.send("La contraseña o el usuario no son correctos")
                     console.log("Error a la hora de introducir los datos")
