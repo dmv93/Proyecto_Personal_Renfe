@@ -16,16 +16,14 @@ const Consulta = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-            usarioMail: mail,
+                usarioMail: mail,
             }),
         };
 
-        // console.log(comprobacion)
-
-        fetch("comprobarCorreo",comprobacion)
+        //la promesa nos devuelve el campo caducidad del usuario
+        fetch("comprobarCorreo", comprobacion)
             .then((res) => res.json())
-            .then((res) => {setDuracion(res.caducidad)})
-            //meter aqui el res
+            .then((res) => { setDuracion(res.caducidad) })
     }
 
 
@@ -34,19 +32,21 @@ const Consulta = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              duracion,
+                duracion,
             }),
-          };
+        };
 
         console.log(caducidad);
-
-          fetch("obtenerCaducidad",caducidad)
-          .then((res) => res.json())
-          .then((res) => {
-          console.log("Holaaaaa")})
+        //sin funcionamiento aun bueno
+        fetch("obtenerCaducidad", caducidad)
+            .then((res) => res.json())
+            .then((res) => {
+                console.log("")
+            })
     }
 
 
+    //obtenemos el nombre del local y cambiamos el estado
     useEffect(() => {
         setNombreUsuario(localStorage.getItem("nombre"));
     }, []);
@@ -62,18 +62,18 @@ const Consulta = () => {
             </div>
             <div className="contCon">
                 <div className="concon">
-                <label htmlFor="labMail" id="labMail" name="labMail">
-                    Correo electrónico
-                </label>
-                <input
-                    type="mail"
-                    id="campoMail"
-                    name="campoMail"
-                    placeholder="Introduce tu correo"
-                    onChange={(e) => {
-                        setMail(e.target.value);
-                    }}
-                />
+                    <label htmlFor="labMail" id="labMail" name="labMail">
+                        Correo electrónico
+                    </label>
+                    <input
+                        type="mail"
+                        id="campoMail"
+                        name="campoMail"
+                        placeholder="Introduce tu correo"
+                        onChange={(e) => {
+                            setMail(e.target.value);
+                        }}
+                    />
                 </div>
                 <br />
                 <input

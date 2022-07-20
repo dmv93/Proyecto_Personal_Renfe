@@ -15,19 +15,19 @@ const Footer = () => {
                     </a>
                 </div>
                 <div id='logosGenereal'>
-                    <a href='/' className='item'>
-                        <img src="/img/insta.png" className='logoRenfe' display="flex" alt="logo"></img>
+                    <a href='https://www.instagram.com/renfe/?hl=es' className='item'>
+                        <img src="/img/insta.png" href="" className='logoRenfe' display="flex" alt="logo"></img>
                     </a>
-                    <a href='/' className='item'>
+                    <a href='https://www.facebook.com/Renfe/' className='item'>
                         <img src="/img/facebook.png" className='logoRenfe' display="flex" alt="logo"></img>
                     </a>
-                    <a href='/' className='item'>
+                    <a href='https://twitter.com/Renfe' className='item'>
                         <img src="/img/twitter.png" className='logoRenfe' display="flex" alt="logo"></img>
                     </a>
-                    <a href='/' className='item'>
+                    <a href='https://www.youtube.com/user/renfe' className='item'>
                         <img src="/img/youtube.png" className='logoRenfe' display="flex" alt="logo"></img>
                     </a>
-                    <a href='/' className='item'>
+                    <a href='https://www.tiktok.com/@renfe?lang=es' className='item'>
                         <img src="/img/tiktok.png" className='logoRenfe' display="flex" alt="logo"></img>
                     </a>
                 </div>

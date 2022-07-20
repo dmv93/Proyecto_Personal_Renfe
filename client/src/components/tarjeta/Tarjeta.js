@@ -6,29 +6,23 @@ const Tarjeta = () => {
 
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [duracion, setDuracion] = useState("mensual");
-  //   const [duracion, setDuracion] = useState("");
   const [zona, setZona] = useState("A");
   const [precio, setPrecio] = useState("60€");
   const [mail, setMail] = useState("");
 
-  //   function cambioDia(e) {
-  //     setDia(e.target.value);
-  //   }
-
-  //   function cambioZona(e) {
-  //     setZona(e.target.value);
-  //   }
 
   const comprobarMail = () => {
     let comprobacion = {
+      //pasamos al back el mail del usuario para encontrarlo
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-      usarioMail: mail,
+        usarioMail: mail,
       }),
     };
     console.log(comprobacion);
 
+    //si hay correa la promesa se efectua
     fetch("comprobarCorreo")
       .then((res) => res.json())
       .then((res) => console.log(res));
@@ -36,6 +30,7 @@ const Tarjeta = () => {
 
   const sendData = () => {
 
+    //pasamos los datos de requerimiento para darle una tarjeta al usuario recogido arriba
     let enviarTarjeta = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -49,11 +44,14 @@ const Tarjeta = () => {
 
     console.log(enviarTarjeta)
 
-    fetch("guardarTarjeta",enviarTarjeta)
-        .then((res) => res.json())
-        .then((res) => {if(res) {
-            navigate('/')
-        }})
+    //si todo sale bien la promesa nos lleva al home
+    fetch("guardarTarjeta", enviarTarjeta)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res) {
+          navigate('/')
+        }
+      })
   };
 
   useEffect(() => {
@@ -107,11 +105,11 @@ const Tarjeta = () => {
             </select>
           </div>
 
-          <p>Precio: {precio}</p>
+          <p>Precio: de {precio} para el mensual y 700€ para el anual</p>
           <input
             type={"button"}
             onClick={() => sendData()}
-            className="boton"
+            className="sed"
             value="Comprar"
           />
         </form>
