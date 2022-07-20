@@ -14,7 +14,7 @@ const coleccionCompra = 'Compra_sin_login'
 const compraSi = {
 
     //para trabajar las estaciones de nuestra coleccion
-    verInfoColeccionEstaciones: (req, res) => {
+        verInfoColeccionEstaciones: (req, res) => {
         MongoClient.connect(url, function (err, db) {
             if (err) throw err
             var dbo = db.db(mydb);

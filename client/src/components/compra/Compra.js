@@ -94,7 +94,9 @@ const Compra = () => {
                     {/* {datosEstaciones ? datosEstaciones.map((linea, index) =>
                         <p key={{ index }}>{precio}</p>)
                         : ""} */}
-                    <input type="button" className="boton" onClick={() => sendData()} value="Comprar" />
+                        <div className="dibut">
+                    <input type={"button"}className="boton" onClick={() => sendData()} value="Comprar" />
+                    </div>
                     {aviso ? aviso : ""}
                 </div>
             </div>

@@ -6,6 +6,7 @@
 
 .contCon {
     display: flex;
+    justify-content: space-around;
 }
 
 .contCon {
@@ -29,4 +30,8 @@
     flex-direction: column;
     width: auto;
     margin-bottom: 1em;
+}
+
+.boton {
+    margin-left: 30%;
 }

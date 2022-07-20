@@ -105,11 +105,11 @@ const Tarjeta = () => {
             </select>
           </div>
 
-          <p>Precio: {precio}</p>
+          <p>Precio: de {precio} para el mensual y 700€ para el anual</p>
           <input
             type={"button"}
             onClick={() => sendData()}
-            className="boton"
+            className="sed"
             value="Comprar"
           />
         </form>

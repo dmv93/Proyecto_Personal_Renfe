@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useSyncExternalStore } from 'react';
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
                 <div className='itemsNav'>
                     {/* {nombreUsuario ? <h2 className="cab">Bienvenido {nombreUsuario}</h2>: <h2 className="cab">Iniciar sesión</h2>} */}
                     {nombreUsuario ? <div><Link to={"/login"} id='ini'>Bienvenido {nombreUsuario}</Link>
-                        <Link to={"/"} id='out'>Salir</Link></div>
+                        <Link to={"/"} onClick={window.localStorage.clear()} id='out'>Salir</Link></div>
                         : <div><Link to={"/login"} id='ini'>Iniciar sesión</Link>
                             <Link to={"/registro"} id='reg'>Registrarse</Link>
                             <Link to={"/compra"} id='com'>Compra</Link></div>}
